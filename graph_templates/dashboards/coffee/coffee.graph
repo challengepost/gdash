@@ -1,0 +1,10 @@
+title       "Combined Coffee Usage"
+vtitle      "count"
+area        :stacked
+description "The combined Coffee usage"
+
+field :coffees_consumed, 
+          :scale => 10,
+          :alias => "Coffees",
+          :max => 10,
+          :data  => "stats.coffees_consumed"

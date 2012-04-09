@@ -37,6 +37,7 @@ class GDash
       @intervals = options.delete(:intervals) || []
 
       @top_level = Hash.new
+
       Dir.entries(@graph_templates).each do |category|
         if File.directory?("#{@graph_templates}/#{category}")
           unless ("#{category}" =~ /^\./ )
@@ -124,7 +125,6 @@ class GDash
         end
 
       options.merge!(query_params)
-
       if @top_level["#{params[:category]}"].list.include?(params[:dash])
         @dashboard = @top_level[@params[:category]].dashboard(params[:dash], options)
       else
